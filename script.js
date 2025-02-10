@@ -148,6 +148,9 @@ function createFirework() {
 
 // When Yes is clicked
 yesButton.addEventListener('click', function() {
+    // Change the heading text
+    document.querySelector('h1').textContent = 'Thank you for being my Valentine! Manisha';
+    
     // Show background image with fade-in effect
     const bgImage = document.querySelector('.background-image');
     bgImage.style.display = 'block';
