@@ -1,0 +1,215 @@
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ffe6e6;
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    text-align: center;
+    background-color:(transparent);
+    backdrop-filter: blur(8px);
+    padding: 2rem;
+    border-radius: 20px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+
+h1 {
+    color: #ff4d4d;
+    margin-bottom: 2rem;
+}
+
+img {
+    width: 200px;
+    margin-bottom: 2rem;
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+button {
+    padding: 10px 30px;
+    font-size: 1.2rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+#yesButton {
+    background-color: #ff4d4d;
+    color: white;
+    position: relative;
+    width: 60px;
+    height: 60px;
+    padding: 0;
+    border-radius: 0;
+    transform: rotate(45deg);
+    transition: transform 0.3s;
+    font-size: 0;
+    margin: 20px;
+}
+
+#yesButton::before,
+#yesButton::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #ff4d4d;
+    border-radius: 50%;
+}
+
+#yesButton::before {
+    left: -50%;
+    top: 0;
+}
+
+#yesButton::after {
+    top: -50%;
+    left: 0;
+}
+
+#yesButton span {
+    position: relative;
+    display: block;
+    transform: rotate(-45deg);
+    font-size: 1.2rem;
+    z-index: 1;
+    color: rgba(255, 255, 255, 0.39);
+}
+
+#yesButton:hover {
+    transform: rotate(45deg) scale(1.1);
+}
+
+#noButton {
+    background-color: #808080;
+    color: white;
+    transition: all 0.5s ease;
+}
+
+.heart-container {
+    width: 200px;
+    height: 200px;
+    margin: 0 auto 2rem;
+    position: relative;
+    background-image: url('https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExc28yeHp3aWtqY21xaXU3aDl4NnFjc250bzdrcGt1b3J1cjRuZjVocSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/1hoKkBNSBxVyHIsPer/giphy.gif');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+/* Remove these styles as they're no longer needed */
+.heart,
+.heart::before,
+.heart::after {
+    display: none;
+}
+
+@keyframes heartbeat {
+    /* We can remove this animation since we're using the GIF */
+    display: none;
+}
+
+.love-balloon {
+    position: fixed;
+    width: 60px;
+    height: 60px;
+    background-image: url('https://em-content.zobj.net/source/apple/354/heart-suit_2665-fe0f.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    pointer-events: none;
+    z-index: 1000;
+    animation: floatUpAndStay 4s ease-out forwards, moveAround 10s ease-in-out infinite;
+}
+
+@keyframes floatUpAndStay {
+    0% {
+        transform: translateY(0) scale(0.5);
+        opacity: 0;
+    }
+    20% {
+        opacity: 1;
+    }
+    60% {
+        transform: translateY(-60vh) scale(1.2);
+    }
+    100% {
+        transform: translateY(-50vh) scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes moveAround {
+    0%, 100% {
+        transform: translate(0, -50vh);
+    }
+    25% {
+        transform: translate(30vw, -60vh) rotate(20deg);
+    }
+    50% {
+        transform: translate(-20vw, -40vh) rotate(-20deg);
+    }
+    75% {
+        transform: translate(10vw, -70vh) rotate(10deg);
+    }
+}
+
+/* Remove video-related styles */
+.video-background,
+#myVideo,
+.video-overlay {
+    display: none;
+}
+
+/* Update background image styles */
+.background-image {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('manisha2.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: -2;
+    opacity: 0;
+    transition: opacity 1s ease;
+    display: none;
+}
+
+.background-image.show {
+    display: block;
+    opacity: 0.8;
+}
+
+/* Update the overlay to match the transition */
+.background-image::after {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 192, 203, 0.6);
+    z-index: -1;
+}
+
+.content {
+    position: relative;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: transparent; /* Remove the previous background */
+} 
