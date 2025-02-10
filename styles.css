@@ -212,4 +212,169 @@ button {
     justify-content: center;
     align-items: center;
     background: transparent; /* Remove the previous background */
+}
+
+.love-messages {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1000;
+}
+
+.love-text {
+    position: absolute;
+    font-size: 2rem;
+    color: #ff4d4d;
+    animation: floatAndFade 4s ease-out forwards;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    font-family: 'Arial', sans-serif;
+    white-space: nowrap;
+}
+
+@keyframes floatAndFade {
+    0% {
+        transform: translate(0, 0) scale(0.5);
+        opacity: 0;
+    }
+    20% {
+        opacity: 1;
+    }
+    100% {
+        transform: translate(var(--moveX), var(--moveY)) scale(1.2);
+        opacity: 0;
+    }
+}
+
+.spotlight {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.85);
+    z-index: 2000;
+    display: none;
+    opacity: 0;
+    transition: opacity 1s ease;
+}
+
+.spotlight.show {
+    opacity: 1;
+}
+
+.spotlight-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+    animation: spotlightReveal 2s ease-out forwards;
+}
+
+.memory-text {
+    padding: 2rem;
+    border-radius: 15px;
+    background: rgba(255, 77, 77, 0.2);
+    box-shadow: 0 0 50px rgba(255, 77, 77, 0.5);
+}
+
+.memory-text h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: #ff4d4d;
+}
+
+.memory-text .date {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    color: #ff8080;
+}
+
+.memory-text .description {
+    font-size: 1.5rem;
+    color: #ffb3b3;
+}
+
+@keyframes spotlightReveal {
+    0% {
+        transform: translate(-50%, -50%) scale(0.5);
+        opacity: 0;
+    }
+    100% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 1;
+    }
+}
+
+.firework {
+    position: fixed;
+    width: 4px;
+    height: 4px;
+    pointer-events: none;
+    z-index: 2000;
+}
+
+.firework::before {
+    content: '';
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background-color: currentColor;
+    box-shadow: 0 0 6px currentColor,
+                0 0 12px currentColor,
+                0 0 20px currentColor;
+}
+
+.firework-trail {
+    position: absolute;
+    width: 2px;
+    height: 20px;
+    transform-origin: top;
+    background: linear-gradient(to bottom, currentColor, transparent);
+}
+
+.firework-particle {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    transform-origin: center;
+    animation: particle 1s ease-out forwards;
+}
+
+@keyframes particle {
+    0% {
+        transform: translate(0, 0) scale(1);
+        opacity: 1;
+    }
+    100% {
+        transform: translate(var(--x), var(--y)) scale(0.1);
+        opacity: 0;
+    }
+}
+
+.spark {
+    position: absolute;
+    width: 3px;
+    height: 3px;
+    border-radius: 50%;
+    animation: spark 1s ease-out forwards;
+}
+
+@keyframes spark {
+    0% {
+        transform: translate(0, 0);
+        opacity: 1;
+    }
+    100% {
+        transform: translate(var(--tx), var(--ty));
+        opacity: 0;
+    }
 } 
