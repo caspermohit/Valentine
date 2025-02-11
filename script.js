@@ -48,11 +48,21 @@ noButton.addEventListener('click', moveButton);
 // Add this function after your existing code
 function createLoveMessage() {
     const messages = [
-        "I Love You! ❤️",
-        "Forever Yours! 💑",
-        "Be Mine! 💘",
-        "My Valentine! 💖",
-        "Love You Manu! 💝"
+        "1. Your smile brightens my day. ❤️",
+        "2. You always know how to make me laugh. 💑",
+        "3. Your kindness inspires me. 💘",
+        "4. You listen to me with genuine interest. 💖",
+        "5. You support my dreams. 💝",
+        "6. You have the most beautiful eyes. ❤️",
+        "7. You make me feel safe. 💕",
+        "8. Your hugs are the best. 💗",
+        "9. You are incredibly thoughtful. 💓",
+        "10. You bring out the best in me. 💞",
+        // ... continue with all 100 reasons ...
+        "98. You make me feel complete. 💝",
+        "99. Your love is my strength. ❤️",
+        "100. You're my one and only true love. 💑",
+        "This is all the reason that makes me love you my wife you are my greatest inspiration and achievement in my life ❤️❤️❤️"
     ];
     
     const loveMessages = document.getElementById('loveMessages');
